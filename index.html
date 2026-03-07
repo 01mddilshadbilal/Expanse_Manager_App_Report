@@ -1,0 +1,1840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Manager - MAJOR Project Report</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #000;
+            background-color: #f9f9f9;
+            background: #090909;
+            font-size: 12pt;
+        }
+        .center {
+            text-align: center;
+        }
+        .page-break{
+            page-break-before:always;
+        }
+        .chapter{
+            margin-bottom:60px;
+        }
+
+        .image-page{
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
+        gap:20px;
+        }
+        .two-row{
+            display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:10px;
+        }
+        .img-box{
+            text-align:center;
+        }
+        .img-box img{
+        width:100%;
+        height:100%;
+        object-fit:contain;
+        border:1px solid #ccc;
+        
+        background:rgb(122, 17, 17);
+        }
+        .img-box p{
+            margin-bottom:-15px;
+            margin-top: -10px;
+            font-size:13px;
+        }
+        .shot{
+            text-align:center;
+            padding:10px;
+            border:1px solid #ddd;
+            border-radius:6px;
+            background:#fafafa;
+        }
+
+        .pagesaa {
+            width: 210mm;
+            height: 310mm;
+            margin: 0 auto;
+            padding: 25mm;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            background: white;
+            margin-bottom: 10mm;
+            position: relative;
+        }
+        .pages {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            padding: 25mm;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            background: white;
+            margin-bottom: 10mm;
+            position: relative;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #000;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        .header h1 {
+            font-size: 16pt;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+        .college-info {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 12pt;
+        }
+        .section {
+            margin: 20px 0;
+            page-break-inside: avoid;
+        }
+        .section h3 {
+            border-bottom: 1px solid #000;
+            padding-bottom: 6px;
+            margin-bottom: 12px;
+            font-size: 13pt;
+        }
+        .student-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        .student-table th, .student-table td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: left;
+        }
+        .student-table th {
+            background: #f0f0f0;
+        }
+        .abstract-box {
+            border: 1px solid #000;
+            padding: 15px;
+            margin: 15px 0;
+            background: #f9f9f9;
+            font-size: 11pt;
+        }
+        .screenshot {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .screenshot img {
+            max-width: 80%;
+            border: 1px solid #000;
+        }
+        .caption {
+            font-size: 10pt;
+            font-style: italic;
+            margin-top: 5px;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 15px 0;
+        }
+        .feature-item {
+            background: #f5f5f5;
+            padding: 10px;
+            border-left: 3px solid #000;
+            font-size: 10pt;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #000;
+            font-size: 10pt;
+        }
+        .page-number {
+            position: absolute;
+            bottom: 15mm;
+            right: 25mm;
+            font-size: 10pt;
+        }
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 10px;
+            font-size: 11pt;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        p {
+            margin-bottom: 10px;
+            font-size: 11pt;
+            text-align: justify;
+        }
+        .signature-table {
+            width: 100%;
+            margin: 30px 0;
+        }
+        .signature-table td {
+            padding: 20px 0;
+            text-align: center;
+            border-top: 1px solid #000;
+        }
+        .architecture {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 9pt;
+            white-space: pre-wrap;
+            margin: 12px 0;
+            line-height: 1.4;
+        }
+        /* extra add css */
+        .logo-large {
+            width: 1.8104166666666666in;
+            height: 1.4590277777777778in;
+        }
+        .spaceree {
+            height: 20px;
+        }
+        .project-titleee {
+            font-size: 18pt;
+            line-height: 1.5;
+            margin: 20px 0;
+        }
+        .underlineee {
+            text-decoration: underline;
+        }
+        p{
+            text-align: center;
+        }
+        .signature-line {
+            border-bottom: 1px solid #000;
+            width: 200px;
+            display: inline-block;
+            margin: 0 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- Page 1: Cover Page -->
+    <div class="pages">
+        <div class="college-info">
+            <h2>MOLANA AZAD COLLEGE OF ENGINNERING & TECHNOLOGY</h2>
+            <h3>Department of Computer Science & Engineering</h3>
+            <div style="display: flex;">
+                <div style="margin-top: 10mm;">
+                    <img src="image1.png" alt="College Logo" class="logo logo-large">
+                </div>
+                <div style="margin-top: 30mm;">
+                    <h4>SBTE, PATNA, BIHAR</h4>
+                    <h4>Academic Year 2025-2026</h4>
+                    <h4>MAJOR PROJECT REPORT</h4>
+                </div>
+                <div style="text-align: center; margin-top: 8mm;">
+                 <img src="image2.png" alt="SBTE Logo" class="logo logo-large">
+                </div>
+            </div>
+           <div>
+                <h1>on</h1>
+           </div>
+            <div style="text-align: center;">
+                <h1> <i> EXPENSE MANAGER ANDROID APPLICATION </i> </h1>
+                <h2>A Smart Mobile Solution for Personal Finance Management</h2>
+            </div>          
+        </div>        
+        <div style="margin: 30px 0;">
+            <div style="font-size: 14pt; margin-top: -10px; text-align: center;"><strong>SUBMITTED BY</strong></div> <BR>
+            <div>
+                <div style="font-size: 12pt; margin-bottom: 5px;">MD ASIF ALAM (23-CS-008)</div>
+                <div style="font-size: 12pt; margin-bottom: 5px;">RITIK KUMAR (23-CS-020)</div>
+                <div style="font-size: 12pt; margin-bottom: 5px;">MD DILSHAD ALAM (23-CS-601)</div>
+                <div style="font-size: 12pt;">AMANAT ALI (23-CS-602)</div>
+            </div>
+        </div>
+
+        <div style="display: flex;">
+            <div style="text-align: right;">
+                <div style="font-size: 12pt; text-align: left;">Under the Guidance of</div>
+                <div style="font-size: 12pt; text-align: LEFT;"><strong>Md. Sadruddin Ahmad</strong></div>
+            </div>
+            <div style="margin-left: 50%;">
+                <div style="font-size: 12pt; text-align: left;">HOD of</div>
+                <div style="font-size: 12pt; text-align: LEFT;"><strong>Mr. Mazhar Eqbal</strong></div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 15mm;">
+            <div style="font-size: 12pt;">Finall Year (6<sup>th</sup> Semester)</div>
+            <div style="font-size: 12pt;">Session 2023 - 2026</div>
+        </div>
+        <div class="page-number">1</div>
+    </div>
+
+    <!-- extra Page 2: Project Title Page -->
+        <div class="pages">
+            <div class="center">
+                <h2>A</h2>
+                <h2>MAJOR PROJECT REPORT</h2>
+                <h3>on</h3>
+                <h1 class="project-titleee">"EXPENSE MANAGER ANDROID APPLICATION"</h1> 
+        
+                    <p>Submitted in partial fulfillment for the requirement for the award of</p>
+                    <p><strong>DIPLOMA COURSE</strong></p>
+                    <p>In</p>
+                    <p><strong>COMPUTER SCIENCE</strong></p>
+                </div>
+                
+                <div class="spaceree"></div>
+                
+                <h4 class="center"><u>Under the Supervision of</u></h4>
+                
+                <div class="spaceree"></div>
+                
+                <p><strong>Guide</strong></p>
+                <p>[ Md. Sadruddin Ahmad ]</p>
+              
+                
+                <div class="spaceree"></div>
+                
+                <!-- Logo 3 -->
+                 <div class="center">
+                <img src="image3.png" alt="College Logo" class="logo logo-medium">
+                </div>
+                <div class="spaceree"></div>
+                
+                <p><strong>SESSION 2023-2026</strong></p>
+                
+                <div class="spaceree"></div>
+                
+                <p><strong>DEPARTMENT OF COMPUTER SCIENCE</strong></p>
+                <p><strong>MAULANA AZAD COLLEGE OF ENGINEERING & TECHNOLOGY,</strong></p>
+                <p><strong>GORHNA P.O: NEORA, PATNA</strong></p>
+            <div class="page-number">2</div>
+            </div>
+        </div>
+        
+
+        
+
+    <!-- Page 3: Certificate -->
+    <div class="pages">
+        <div class="header">
+             <div class="center">
+                <h2>MAULANA AZAD COLLEGE OF ENGINEERING & TECHNOLOGY</h2>
+                
+                <!-- Logo 1 -->
+                <img src="image1.png" alt="College Logo" class="logo logo-small">
+                
+                <p><strong>DEPARTMENT OF COMPUTER SCIENCE</strong></p>
+                <p><strong>SESSION- 2023-2026</strong></p>
+            </div>
+            <h1> <u> CERTIFICATE </u> </h1>
+        </div>
+        
+        <div class="section">
+            This is to certify that the project entitled “Expense Manager Android Application” has been successfully completed by <strong> MD ASIF ALAM, RITIK KUMAR, MD DILSHAD ALAM, AMANAT ALI </strong>students of Diploma in Computer Science & Engineering, Maulana Azad College of Engineering & Technology, Patna (SBTE Bihar).
+
+This project work has been carried out during the academic session 2023 – 2026 under the supervision of Dr. Sadruddin Ahmad. The work submitted is a bonafide record of the project work carried out by them.
+        </div>
+
+        <div style="margin-top: 50mm;">
+            <table class="signature-table">
+                <tr>
+                    <td>
+                        <strong>Project Guide</strong><br>
+                        Md. Sadruddin Ahmad<br>
+                        Department of CSE
+                    </td>
+                    <td>
+                        <strong>HOD</strong><br>
+                        Mr. MAZHAR EQUBAL<br>
+                        Department of CSE
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div style="text-align: center;">
+            <p><strong>External Examiner</strong></p>
+            <p>_________________________</p>
+        </div>
+        <div class="page-number">3</div>
+    </div>
+
+    <!-- Page 4 -->
+     <!-- Acknowledgment -->
+        <div class="pages">
+            <div class="center">
+                <h2>MAULANA AZAD COLLEGE OF ENGINEERING & TECHNOLOGY</h2>
+                
+                <!-- Logo 1 -->
+                <img src="image1.png" alt="College Logo" class="logo logo-small" style="margin-top: 10mm; margin-bottom: 10mm;">
+                
+                <p><strong>DEPARTMENT OF COMPUTER SCIENCE & ENGINEERING</strong></p>
+                <p><strong>SESSION- 2023-2026</strong></p>
+                
+                <div class="spaceree"></div>
+                
+                <h2 class="underlineee">ACKNOWLEDGMENT</h2>
+                
+                <div class="spaceree"></div>
+            </div>
+            
+            <div style="font-size: 18pt; line-height: 1.5; margin: 20px 0;">
+                <div style="text-align: justify; margin-bottom: 20px; font-size: large;">
+                   We express our sincere gratitude to our respected Head of Department <strong> Mr. Mazhar Eqbal </strong> for providing us with the opportunity to undertake this major project.
+
+We are deeply thankful to our project guide <strong> Dr. Sadruddin Ahmad </strong> for his valuable guidance, continuous encouragement, and support throughout the development of this project. His technical suggestions and motivation helped us to complete the project successfully.
+
+We would also like to thank all the faculty members and staff of the Department of <strong>Computer Science & Engineering </strong>for their help and cooperation during the project work.
+
+Finally, we are grateful to our friends and family members for their constant encouragement and support during the completion of this project.
+                </div>
+                
+                <div style=" margin-top: 30px; font-size: large; font-weight: bold;">
+                    <div>MD ASIF ALAM (23-CS-008)</div>
+                    <div>RITIK KUMAR (23-CS-020)</div>
+                    <div>MD DILSHAD ALAM(23-CS-601)</div>
+                    <div>AMANAT ALI(23-CS-602)</div>
+                </div> 
+                <div class="page-number">4</div>
+            </div>
+        </div>
+
+         
+          <!-- Page 5: 
+            Sheet -->
+        <div class="pages">
+            <div class="center">
+                <h2>MAULANA AZAD COLLEGE OF ENGINEERING & TECHNOLOGY</h2>
+                
+                <!-- Logo 1 -->
+                <img src="image1.png" alt="College Logo" class="logo logo-small" style="margin-top: 10mm; margin-bottom: 10mm;">
+                
+                <p><strong>DEPARTMENT OF COMPUTER SCIENCE & ENGINEERING</strong></p>
+                <p><strong>SESSION- 2023-2026</strong></p>
+                
+                <div class="spacer"></div>
+                
+                <h2 class="underline" style="margin-top: 10mm; margin-bottom: 10mm;">
+                     SHEET</h2>
+                
+                <div class="spaceree"></div>
+            </div>
+            
+            <div class="content">
+                <p><em>This is to certify that</em> <strong>MD ASIF ALAM, RITIK KUMAR, MD DILSHAD ALAM, AMANAT ALI.</strong>, <em>Student(s) of third year 6th semester in</em> <strong>COMPUTER SCIENCE</strong> <em>branch has successfully completed the MAJOR project work Entitled</em> <strong>EXPENSE MANAGER ANDROID APPLICATION</strong><em>.</em> <em>This Technical Project is hereby approved for submission towards partial fulfillment for the requirement of DIPLOMA in</em> <strong>COMPUTER SCIENCE</strong> <em>from</em><strong>, SBTE, PATNA, BIHAR.</strong></p>
+                
+                
+                
+                <div style="display: flex; justify-content: space-between; width: 80%; margin: 40px auto 0;">
+                    <div style="text-align: center;">
+                        <p style="margin-top: 60mm; text-align: left;">(INTERNAL EXAMINER)</p>
+                        <div class="spacer"></div>
+                        <p style="margin-top: 8mm; text-align: left;">Date:____________________</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <p style="margin-top: 60mm;text-align: right;">(EXTERNAL EXAMINER)</p>
+                        <div class="spaceree"></div>
+                        <p style="text-align: left;">Date:_____________________ </p>
+                    </div>
+                </div>
+            </div>
+            <div class="page-number">5</div>
+        </div>
+        
+
+        
+    <!-- Page 6: Abstract -->
+    <div class="pages">
+        <div class="header">
+            <h1>ABSTRACT</h1>
+        </div>
+
+        <div class="abstract-box" style="margin-top: 30mm; margin-bottom: 30mm; ; ">
+            <div>In today's digital world, managing personal finances efficiently has become very important. Many people find it difficult to keep track of their daily income and expenses using traditional methods such as notebooks or manual records. These methods are often time-consuming and may lead to calculation errors.</div> <br>
+            
+            <div>The Expense Manager Android Application is designed to help users easily manage their personal financial activities. The application allows users to record income and expenses, monitor their financial balance, and view transaction history in a simple and organized manner.</div><br>
+            
+            <div>The application is developed using Android Studio with the Java programming language and SQLite database for local data storage. It follows modern Material Design principles to provide a clean and user-friendly interface.</div><br>
+            
+            <div>The app also includes additional modules such as Udhar (credit/debit) management, transaction history, calendar reminders, profile management, and data export/import options.</div><br>
+
+            <div>This application works completely offline, ensuring privacy and quick access to financial information. The project demonstrates practical implementation of mobile application development concepts including activities, database management, UI design, and user interaction.</div><br>
+        </div>
+
+        <div class="section">
+            <h3>KEYWORDS</h3>
+            <p>Android Development, Expense Tracking, SQLite Database, Financial Management, Mobile Application, Java Programming</p>
+        </div>
+        <div class="page-number">6</div>
+    </div>
+
+    <!-- Page 7: Table of Contents -->
+    <div class="pages">
+        <div class="header">
+            <h1>TABLE OF CONTENTS</h1>
+        </div>
+        
+        <div class="section">
+            <ol>
+                <pre>
+Topic Name                                                    Page-no
+                </pre>
+                
+                <li>1.  Introduction -------------------------------------------------------------------------------------- 8 - 9</li>
+                <li>2.  Literature Survey ------------------------------------------------------------------------------- 10 - 11</li>
+                <li>3.  System Analysis ---------------------------------------------------------------------------------- 12</li>
+                <li>4.  System Design ----------------------------------------------------------------------------------- 13 - 14</li>
+                <li>5.  Implementation ---------------------------------------------------------------------------------- 15 - 17</li>
+                <li>6.  APPLICATION UI SCREENSHOTS --------------------------------------------------------- 18 - 24</li>
+                <li>7.  Testing -------------------------------------------------------------------------------------------- 25 - 30</li>
+                <li>8.  Future Scope -------------------------------------------------------------------------------------- 31</li>
+                <li>9.  Conclusion ---------------------------------------------------------------------------------------- 32</li>
+                <li>10. References ---------------------------------------------------------------------------------------- 33</li> 
+                <li>11. APPENDIX --------------------------------------------------------------------------------------- 34 - 35</li> 
+           </ol>
+        </div>
+
+        <div class="section">
+            <h3>LIST OF FIGURES</h3>
+            
+<pre>
+Page-no                         ScreenShoot
+   <b>18.</b>       Expense Manager Icon, In Mobile Logo, Splash Screen.
+   <b>19.</b>       Signup Email, Signup Phone, Email Login Screen, Phone
+        Login Screen, Main Dashboard, Dashboard Navigation.
+   <b>20.</b>       Add Income Screen, Add Expense Screen, Transaction History,
+        Edit Transaction Card, Delete Transaction Card, Monthly Report . 
+   <b>21.</b>       Add Udhar Screen, Udhar HistoryLiya Filter, Udhar History Diya
+        Filter, Udhar History, On View Card In Udhar History, Udhar Add/Paid.
+   <b>22.</b>       Calender, Reminder Set, Settings Main, Profile View, Profile 
+        Image Picker, Settings Security. 
+   <b>23.</b>       Settings Delete Options, Recycle Bin List, Recycle Bin Delete 
+        All, Settings Recycle Bin, Recycle Bin Restore, Settings Export. 
+   <b>24.</b>       Settings Import, Share Data, Themes, App Creator In About, 
+        App Start Time Password, Forget Password.
+
+</div>
+</pre>
+        
+        <div class="page-number">7</div>
+    </div>
+
+    <!-- Page 8: Introduction -->
+    <div class="pages">
+        <div class="header">
+            <h1>1. INTRODUCTION</h1>
+        </div>
+        <div>In modern society, financial management plays a crucial role in maintaining a balanced lifestyle. Many people struggle to keep track of their daily income and expenses due to busy schedules and lack of proper tools. Traditional methods such as maintaining notebooks or manual records are not efficient and may lead to errors.</div><br>
+        <div>With the rapid development of smartphone technology, mobile applications have become an effective solution for managing personal data and daily activities. Android applications provide users with convenient and portable solutions that can be accessed anytime and anywhere.</div><br>
+        <div>The <strong>Expense Manager Android Application </strong> is designed to help users efficiently track their financial transactions. The application provides a simple and user-friendly interface that allows users to record income, expenses, and manage financial records easily.</div><br>
+        <div>This project focuses on building a practical Android application that demonstrates the implementation of mobile development concepts such as user interface design, activity navigation, database management, and data storage.</div><br>
+        
+        <div class="section">
+            <h3>1.1 PROJECT TEAM</h3>
+            <table class="student-table">
+                <tr>
+                    <th>Name</th>
+                    <th>Roll Number</th>
+                    <th>Course</th>
+                    <th>Session</th>
+                </tr>
+                <tr>
+                    <td>MD ASIF ALAM</td>
+                    <td>23-CS-008</td>
+                    <td>Diploma in CSE</td>
+                    <td>2023 - 2026</td>
+                </tr>
+                <tr>
+                    <td>RITIK KUMAR</td>
+                    <td>23-CS-020</td>
+                    <td>Diploma in CSE</td>
+                    <td>2023 - 2026</td>
+                </tr>
+                <tr>
+                    <td>MD DILSHAD ALAM</td>
+                    <td>23-CS-601</td>
+                    <td>Diploma in CSE</td>
+                    <td>2024 - 2026</td>
+                </tr>
+                
+                <tr>
+                    <td>AMANAT ALI</td>
+                    <td>23-CS-602</td>
+                    <td>Diploma in CSE</td>
+                    <td>2024 - 2026</td>
+                </tr>
+            </table>
+        </div>
+
+
+        
+       
+        <div class="page-number">8</div>
+    </div>
+
+    <!-- Page 9: Introduction -->
+    <div class="pages">
+         <div class="section">
+            <h3>1.2 PROBLEM STATEMENT</h3>
+            <div style="margin-bottom: 10px;">Managing personal finances is a common challenge for many people. Most individuals do not keep proper records of their daily income and expenses. As a result, they often face difficulties in understanding where their money is being spent.</div>
+            <div style="margin-bottom: 10px;">Manual record keeping using notebooks or paper is not efficient and can lead to loss of data or calculation mistakes. It also becomes difficult to analyze spending patterns and maintain organized financial records.</div>
+            <div style="margin-bottom: 10px;">Therefore, there is a need for a simple and effective mobile application that allows users to easily record and monitor their financial transactions. The application should provide a clear view of income, expenses, and overall financial balance.</div>
+        </div>
+        <div class="section">
+            <h3>1.3 OBJECTIVES OF THE PROJECT</h3>
+            <ul>
+                <li>To design and develop a user-friendly Android application for managing personal finances.</li>
+                <li>To allow users to record their daily income and expense transactions easily.</li>
+                <li>To provide a structured system for tracking financial records.</li>
+                <li>To implement a secure and reliable local database for storing user data.</li>
+                <li>To provide additional features such as transaction history, reminders, and data management.</li>
+                <li>To demonstrate the practical implementation of Android application development concepts.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>1.4 SCOPE OF THE PROJECTE</h3>
+            <div style="margin-bottom: 10px;">The Expense Manager Android Application is designed primarily for personal use. The application helps individuals maintain records of their financial activities in a simple and organized manner.</div>
+            <div style="margin-bottom: 10px;">Users can easily record their income and expenses, view transaction history, and manage financial records without the need for traditional manual methods.</div>
+            <div style="margin-bottom: 10px;">The application works offline using a local database, ensuring that users can access their data anytime without requiring internet connectivity.</div>
+            <div style="margin-bottom: 10px;">Future improvements may include cloud synchronization, data backup systems, advanced analytics, and enhanced security features.</div>
+        </div>
+        <div class="page-number">9</div>
+    </div>
+
+    <!-- Page 10: Literature Survey -->
+    <div class="pages">
+        <div class="header">
+            <h1>2. LITERATURE SURVEY</h1>
+        </div>
+        <div>
+            <div style="margin-bottom: 10px;">A literature survey is an important step in understanding existing solutions and technologies related to the project. Several mobile applications are already available in the market that help users manage their personal finances.</div>
+            <div style="margin-bottom: 10px;">Popular applications such as expense trackers and budget planners allow users to record financial transactions and monitor spending habits. These applications often provide features such as expense categorization, financial reports, and graphical analysis of spending patterns.</div>
+            <div style="margin-bottom: 10px;">However, many existing applications require internet connectivity, contain complex interfaces, or include unnecessary features that make them difficult for beginners to use.</div>
+            <div style="margin-bottom: 10px;">The goal of this project is to develop a simple, lightweight, and user-friendly expense management application that can work offline and provide essential financial management tools for everyday users.</div>
+            <div style="margin-bottom: 10px;">The proposed application focuses on simplicity, accessibility, and ease of use while maintaining essential functionality for tracking financial transactions effectively.</div>
+        </div>
+        <div class="section" style="margin-top: 10mm; margin-bottom: 10mm;">
+            <h3>2.1 TECHNOLOGIES REVIEW</h3>
+            <div class="features-grid">
+                <div class="feature-item" style="margin-top: 5mm; margin-bottom: 5mm;">
+                    <h4>Android Development</h4>
+                    <p>Android Studio with Java programming language provides robust development environment with extensive libraries and community support.</p>
+                </div>
+                <div class="feature-item" style="margin-top: 5mm; margin-bottom: 5mm;">
+                    <h4>SQLite Database</h4>
+                    <p>Lightweight, serverless database ideal for mobile applications with ACID compliance and zero configuration requirements.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Material Design</h4>
+                    <p>Google's design language providing consistent, intuitive user experience across different Android devices.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>XML Layouts</h4>
+                    <p>Declarative approach for creating user interfaces with responsive design capabilities for various screen sizes.</p>
+                </div>
+            </div>
+        </div>
+        <div class="page-number">10</div>
+    </div>
+    <!-- Page_no 11 -->
+    <div class="pages">
+        <div class="section">
+            <h3>2.2 SYSTEM REQUIREMENTS</h3>
+            <div><strong>Hardware Requirements</strong></div>
+            <table class="student-table">
+                <tr>
+                    <th>Component</th>
+                    <th>Specification</th>
+                </tr>
+                <tr>
+                    <td>Processor</td>
+                    <td>Intel Core i3 or higher</td>
+                </tr>
+                <tr>
+                    <td>RAM</td>
+                    <td>4 GB or higher</td>
+                </tr>
+                <tr>
+                    <td>Storage</td>
+                    <td>500 GB Hard Disk or SSD</td>
+                </tr>
+                <tr>
+                    <td>Android Device</td>
+                    <td>Android 6.0 or higher</td>
+                </tr>
+            </table>
+        </div>
+        
+       
+
+        <div class="section">
+            <h3>2.3 FEASIBILITY STUDY</h3>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h4>Technical Feasibility</h4>
+                    <p>The project uses established technologies (Java, SQLite) with abundant learning resources and community support.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Economic Feasibility</h4>
+                    <p>Uses free development tools and requires minimal hardware resources, making it cost-effective.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Operational Feasibility</h4>
+                    <p>Simple interface ensures easy adoption by users with varying technical expertise.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>2.4 SYSTEM CHARACTERISTICS</h3>
+            <ul>
+                <li><strong>Reliability:</strong> Stable performance with data integrity</li>
+                <li><strong>Availability:</strong> 24/7 accessibility without internet</li>
+                <li><strong>Security:</strong> Local data storage ensures privacy</li>
+                <li><strong>Maintainability:</strong> Modular code structure for easy updates</li>
+                <li><strong>Portability:</strong> Compatible with various Android versions</li>
+            </ul>
+        </div>
+
+         <div class="page-number">11</div>
+    </div>
+        <!-- Page_no 12 -->
+    <div class="pages">
+        <div class="header">
+            <h1>3. SYSTEM ANALYSIS</h1>
+        </div>
+        <div style="margin-bottom: 10px;">System analysis involves studying the existing system and identifying its limitations. Based on this analysis, a new system can be designed to overcome these limitations and improve overall efficiency.</div>
+        <div style="margin-bottom: 10px;">In the context of financial management, many individuals still depend on traditional methods such as manual record keeping. These methods are not efficient and may result in errors or loss of information.</div>
+        <div style="margin-bottom: 10px;">The proposed Expense Manager Android Application aims to provide a digital solution that simplifies financial tracking and improves accuracy.</div>
+        
+        <div class="section">
+            <h3>3.1 EXISTING SYSTEM</h3>
+            <div style="margin-bottom: 10px;">The existing system for managing personal finances often involves manual record keeping using notebooks or spreadsheets. While these methods may work for basic record keeping, they have several limitations.</div>
+            <ul>
+                <li>Manual calculation errors may occur.</li>
+                <li>Data can be lost or damaged easily.</li>
+                <li>It is difficult to analyze spending patterns</li>
+                <li>Record keeping becomes time-consuming.</li>
+                <li>No automatic reminders or alerts are available.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>3.2 PROPOSED SYSTEM</h3>
+            <div style="margin-bottom: 10px;">The proposed system is an Android-based mobile application designed to simplify the management of personal financial transactions.</div>
+            <div style="margin: bottom 10px; ;">The application allows users to easily record income and expense transactions, view transaction history, and manage financial data in a structured format.</div>
+            <ul>
+                <li>Simple and user-friendly interface.</li>
+                <li>Offline data storage using SQLite database.</li>
+                <li>Fast access to financial records.</li>
+                <li>Transaction history management.</li>
+                <li>Additional modules such as reminders and udhar management.</li>
+            </ul>
+        </div>
+        
+        <div class="page-number">12</div>
+    </div>
+
+    <!-- Page 13: System Design -->
+    <div class="pages">
+        <div class="header">
+            <h1>4. SYSTEM DESIGN</h1>
+        </div>
+        <div style="margin-bottom: 10px;">System design is an important stage in the development of any software application. It provides a clear structure of how the application will function and how different components will interact with each other.</div>
+        <div style="margin-bottom: 10px;">For the Expense Manager Android application, the system design focuses on simplicity, performance, and user-friendly interaction. The design ensures that users can easily add income and expense records, view their financial history, and manage their personal financial data.</div>
+        <div style="margin-bottom: 10px;">The application is designed using modular architecture so that each feature works independently while still interacting smoothly with other modules.</div>
+<div class="section">
+            <h3>4.1 SYSTEM ARCHITECTURE</h3>
+        
+            <div class="architecture">
+ANDROID APPLICATION ARCHITECTURE
+├── PRESENTATION LAYER
+│   ├── LoginActivity
+│   ├── SplashActivity
+│   ├── MainActivity
+│   ├── AddTransactionActivity
+│   ├── TransactionsActivity
+│   └── SettingsActivity
+│   ├── CalenderActivity
+│   └── MonthlyRepor
+│   └── ProfileActivity
+├── udhar
+│   ├── AddUdharActivity
+│   ├── UdharHistoryActivity
+│
+├── BUSINESS LOGIC LAYER
+│   ├── DatabaseHelper
+│   ├── Transaction Model
+│   └── Validation Logic
+│
+└── DATA LAYER
+    └── SQLite Database
+            </div>
+        </div>
+        <div class="page-number">13</div>
+    </div>
+
+<!-- page 14: DataBase design -->
+
+    <div class="pages">
+        <div class="section">
+            <h3>4.2 DATABASE DESIGN</h3>
+            <div>The Expense Manager application uses SQLite as the local database for storing user financial records. SQLite is lightweight, fast, and perfect for offline Android applications.</div>
+            <div>The database stores information such as income, expenses, date, category, and notes entered by the user.</div>
+            <table class="student-table">
+                <tr>
+                    <th>Field Name</th>
+                    <th>Data Type</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Id</td>
+                    <td>INTEGER</td>
+                    <td>Unique identifier for each transaction</td>
+                </tr>
+                <tr>
+                    <td>Type</td>
+                    <td>TEXT</td>
+                    <td>Defines whether transaction is Income or Expense</td>
+                </tr>
+                <tr>
+                    <td>Amount</td>
+                    <td>REAL</td>
+                    <td>The transaction amount entered by the user</td>
+                </tr>
+                <tr>
+                    <td>Date</td>
+                    <td>TEXT</td>
+                    <td>Date of the transaction</td>
+                </tr>
+                <tr>
+                    <td>Category</td>
+                    <td>TEXT</td>
+                    <td>Transaction category</td>
+                </tr>
+                <tr>
+                    <td>Note</td>
+                    <td>TEXT</td>
+                    <td>Additional description or note</td>
+                </tr>
+            </table>
+            <div class="section">
+                <h3>4.3 APPLICATION ARCHITECTURE</h3>
+                 <div>The architecture of the Expense Manager Android application follows a layered approach that separates different parts of the application.</div>
+                 <ol>
+                    <li> <strong>User Interface Layer </strong> – Handles interaction between user and application.</li>
+                    <li><strong>Application Logic Layer</strong> – Processes user actions and manages transactions.</li>
+                    <li><strong>Database Layer </strong>– Stores all financial records securely.</li>
+                    <li><strong>Storage Layer </strong>– Maintains offline data using SQLite database.</li>
+                 </ol>
+            
+            </div>
+        </div>
+        <div class="section">
+            <h3>4.4 APPLICATION FLOW</h3>
+
+           <div>The flow of the Expense Manager application describes the sequence of actions performed by the user while interacting with the system.</div>
+                 <ol>
+                    <li>User opens the application.</li>
+                    <li>User views the dashboard screen.</li>
+                    <li>User selects Income or Expense option.</li>
+                    <li>User enters amount, date, category, and note.</li>
+                    <li>The application saves the data in SQLite database.</li>
+                    <li>User can view history of transactions.</li>
+                    <li>User can check financial summaries on dashboard.</li>
+                 </ol>
+            </div>
+    
+        
+        <div class="page-number">14</div>
+    </div>
+
+    <!-- Page 15: Implementation -->
+    <div class="pages">
+        <div class="header">
+            <h1>5. IMPLEMENTATION</h1>
+        </div>
+        <div style="margin-bottom: 10px;">Implementation is the stage where the actual development of the application takes place. In this phase the design created in previous stages is converted into a working Android application.</div>
+        <div style="margin-bottom: 10px;">The Expense Manager application is developed using Android Studio. Java programming language is used for application logic and XML is used for designing the user interface.</div>
+        <div style="margin-bottom: 10px;">SQLite database is used to store financial data locally in the device. This allows the application to work offline without requiring an internet connection.</div>
+        <div>The implementation focuses on creating a simple and easy to use interface so that users can quickly record income and expenses without difficulty.</div>
+
+        <div class="section">
+            <h3>5.1 APPLICATION FEATURES</h3>
+            <div style="margin-bottom: 10px;">The Expense Manager application provides several useful features for managing personal financial transactions.</div>
+            <ul>
+                <li>Easy recording of income transactions</li>
+                <li>Easy recording of expense transactions</li>
+                <li>Transaction history management</li>
+                <li>Simple and user friendly dashboard</li>
+                <li>Category based transaction organization</li>
+                <li>Offline data storage using SQLite</li>    
+                <li>Financial summary display</li>
+                <li>Clean and modern user interface</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>5.2  MODULES OF THE APPLICATION</h3>
+            <div style="margin-bottom: 10px;">The application is divided into different modules to organize the functionality of the system efficiently.</div>
+            <div style="margin-bottom: 10px;">Each module performs a specific task within the application. The modular approach makes the system easier to manage and maintain.</div>
+        </div>
+        <div class="page-number">15</div>
+    </div>
+        <!-- Page_no 16 -->
+    <div class="pages">
+        <div class="section">
+            <h3>5.3  DASHBOARD MODULE</h3>
+            <div style="margin-bottom: 10px;">The dashboard is the main screen of the application. It provides a summary of the user's financial information such as total income, total expenses, and available balance.</div>
+            <div style="margin-bottom: 10px;">From the dashboard, users can quickly access different features of the application including adding new transactions and viewing transaction history.</div>
+            <ol>
+                <li>Displays total income</li>
+                <li>Displays total expense</li>
+                <li>Shows balance amount</li>
+                <li>Quick navigation to other modules</li>
+            </ol>
+        </div>
+        <div class="section">
+            <h3>5.4 INCOME MODULE</h3>
+            <div style="margin-bottom: 10px;">The income module allows users to record all income related transactions such as salary, pocket money, business income, or any other type of financial gain.</div>
+            <div style="margin-bottom: 10px;">Users can enter details like amount, category, date, and notes related to the income transaction.</div>
+            <ol>
+                <li>Add new income record</li>
+                <li>Store income data in database</li>
+                <li>Update financial summary automatically</li>
+            </ol>
+        </div>
+        <div class="section">
+            <h3>5.5 EXPENSE MODULE</h3>
+            <div style="margin-bottom: 10px;">The expense module allows users to track their daily expenses. Users can record expenses related to food, travel, shopping, bills, and other categories.</div>
+            <div style="margin-bottom: 10px;">The application stores these records and updates the financial summary accordingly.</div>
+            <ol>
+                <li>Add new expense record</li>
+                <li>Store expense data in database</li>
+                <li>Track spending habits</li>
+                <li>Update balance automatically</li>
+            </ol>
+        </div>
+        
+        <div class="page-number">16</div>
+    </div>
+        <!-- Page_no 17 -->
+    <div class="pages">
+        <div class="section">
+                <h3>5.6 HISTORY MODULE</h3>
+                <div style="margin-bottom: 10px;">The history module allows users to view all previous financial transactions recorded in the application. This module provides a clear overview of both income and expense records.</div>
+                <div style="margin-bottom: 10px;">Users can easily scroll through the transaction history and analyze their spending patterns over time.</div>
+                <ol>
+                    <li>Displays complete transaction history</li>
+                    <li>Shows income and expense records</li>
+                    <li>Helps users analyze financial activity</li>
+                    <li>Quick access to past records</li>
+                </ol>
+            </div>
+            <div class="section">
+                <h3>5.7 CATEGORY MODULE</h3>
+                <div style="margin-bottom: 10px;">The category module helps organize financial transactions into different categories such as food, travel, shopping, salary, and others.</div>
+                <div style="margin-bottom: 10px;">Categorizing transactions helps users understand where their money is being spent and improves financial planning.</div>
+                <ol>
+                    <li>Organizes transactions into categories</li>
+                    <li>Improves financial tracking</li>
+                    <li>Helps analyze spending patterns</li>
+                    <li>Makes reports more structured</li>
+                </ol>
+            </div>
+            <div class="section">
+                <h3>5.8 SETTINGS MODULE</h3>
+                <div style="margin-bottom: 10px;">The settings module provides additional configuration options for the user. Through this module users can customize the application according to their preferences.</div>
+                <div style="margin-bottom: 10px;">Some features may include application lock, theme settings, and other customization options.</div>
+                <ol>
+                    <li>Application configuration options</li>
+                    <li>User preferences management</li>
+                    <li>App lock feature (UI available)</li>
+                    <li>Other customization settings</li>
+                </ol>
+            </div>
+        <div class="page-number">17</div>
+    </div>
+    <!-- Page 18: Results and Screenshots -->
+    <div class="pagesaa">
+        <div class="header">
+            <h1>6. APPLICATION UI SCREENSHOTS</h1>
+        </div>
+        
+            <div>
+                <img src="Expense Manager Icon.png" width="400px" height="380px" style="margin-left: 100px;" >
+                <p>Expense Manager Icon </p>
+            </div>  
+            <div class="two-row">
+                 <!-- 1 -->
+                <div>
+                    <img src="APPICON.png" width="100%" height="75%">
+                    <p>In Mobile Logo</p>
+                </div>
+                <!-- 1 -->
+                <div>
+                    <img src="splash_screen.jpeg" width="100%" height="75%">
+                    <p>Splash Screen</p>
+                </div>
+            </div>
+            <div class="page-number">18</div>
+        </div>
+    </div>
+    <div class="pages">
+        <div class="image-page">
+                
+            
+            <!-- 2 -->
+            <div class="img-box">
+                <img src="signup_email.jpeg">
+                <p>Signup Email</p>
+            </div>
+            <!-- 3 -->
+            <div class="img-box">
+                <img src="signup_phone.jpeg">
+                <p>Signup Phone</p>
+            </div>
+            <!-- 4 -->
+            <div class="img-box">
+                <img src="login_email.jpeg">
+                <p>Email Login Screen</p>
+            </div>
+            <!-- 5 -->
+            <div class="img-box">
+                <img src="login_phone.jpeg">
+                <p>Phone Login Screen</p>
+            </div>
+            <!-- 6 -->
+            <div class="img-box">
+                <img src="dashboard_main.jpeg">
+                <p>Main Dashboard</p>
+            </div>
+            <!-- 7 -->
+            <div class="img-box">
+                <img src="dashboard_profile_menu.jpeg">
+                <p>Dashboard Navigation</p>
+            </div>
+<!-- 8 -->
+        </div>
+        <div class="page-number">19</div>
+    </div>
+    <div class="pages">
+        <div class="image-page">
+            <div class="img-box">
+                <img src="add_income or expense.jpeg">
+                <p>Add Income Screen</p>
+            </div>
+<!-- 9 -->
+            <div class="img-box">
+                <img src="add_income or expense.jpeg">
+                <p>Add Expense Screen</p>
+            </div>
+<!-- 10 -->
+            <div class="img-box">
+                <img src="transaction_list.jpeg">
+                <p>Transaction History</p>
+            </div>
+<!-- 35 -->
+            <div class="img-box">
+                    <img src="transaction_edit.jpeg">
+                <p>Edit Transaction Card</p>
+            </div>
+<!-- 36 -->
+            <div class="img-box">
+                <img src="transaction_delete_dialog.jpeg">
+                <p>Delete Transaction Card </p>
+            </div>
+<!-- 20 -->
+            <div class="img-box">
+                <img src="monthly_report.jpeg">
+                <p>Monthly Report</p>
+            </div>
+        </div>
+        <div class="page-number">20</div>
+    </div>
+    <div class="pages">
+        <div class="image-page">
+<!-- 11 -->
+            <div class="img-box">
+                <img src="add_udhar.jpeg">
+                <p>Add Udhar Screen</p>
+            </div>
+<!-- 18 -->
+            <div class="img-box">
+                    <img src="dashboard_udhar_liya_filter.jpeg">
+                <p>Udhar HistoryLiya Filter</p>
+            </div>
+<!-- 19 -->
+            <div class="img-box">
+                <img src="dashboard_udhar_diya_filter.jpeg">
+                <p>Udhar History Diya Filter</p>
+            </div>
+<!-- 12 -->
+            <div class="img-box">
+                <img src="udhar_history_list.jpeg">
+                <p>Udhar History</p>
+            </div>
+<!-- 13 -->
+            <div class="img-box">
+                <img src="personal_ledger.jpeg">
+                <p>On View Card In Udhar History</p>
+            </div>
+<!-- 14 -->
+            <div class="img-box">
+                <img src="udhar_payment_dialog.jpeg">
+                <p> Udhar Add/Paid </p>
+            </div>
+        </div>
+        <div class="page-number">21</div>
+    </div>
+    <div class="pages">
+        <div class="image-page">
+<!-- 21 -->
+            <div class="img-box">
+                <img src="notification_shade.jpeg">
+                <p>Calender</p>
+            </div>
+<!-- 15 -->
+            <div class="img-box">
+                <img src="calendar_add_reminder.jpeg">
+                <p>Reminder Set</p>
+            </div>
+<!-- 31 -->
+            <div class="img-box">
+                <img src="settings_main.jpeg">
+                <p>Settings Main</p>
+            </div>
+
+            <div class="img-box">
+                <img src="profile_view.jpeg">
+                <p>Profile View</p>
+            </div>
+
+            <div class="img-box">
+                <img src="profile_image_picker.jpeg">
+                <p>Profile Image Picker</p>
+            </div>
+<!-- 33 -->
+            <div class="img-box">
+                <img src="settings_security_dialog.jpeg">
+                <p>Settings Security</p>
+            </div>
+        </div>
+        <div class="page-number">22</div>
+    </div>
+    <div class="pages">
+        <div class="image-page">
+<!-- 28 -->
+            <div class="img-box">
+                <img src="settings_delete_options.jpeg">
+                <p>Settings Delete Options</p>
+            </div>
+<!-- 26 -->
+            <div class="img-box">
+                <img src="recycle_bin_list.jpeg">
+                <p>Recycle Bin List</p>
+            </div>
+
+            <div class="img-box">
+                <img src="recycle_bin_delete_all.jpeg">
+                <p>Recycle Bin Delete All</p>
+            </div>
+<!-- 32 -->
+            <div class="img-box">
+                <img src="settings_recycle_bin.jpeg">
+                <p>Settings Recycle Bin</p>
+            </div>
+        
+<!-- 27 -->
+            <div class="img-box">
+                <img src="recycle_bin_restore.jpeg">
+                <p>Recycle Bin Restore</p>
+            </div>
+<!-- 29 -->
+            <div class="img-box">
+                <img src="settings_export.jpeg">
+                <p>Settings Export</p>
+            </div>
+        </div>
+        <div class="page-number">23</div>
+    </div>
+    <div class="pages">
+        <div class="image-page">
+<!-- 30 -->
+            <div class="img-box">
+                <img src="settings_import.jpeg">
+                <p>Settings Import</p>
+            </div>
+<!-- 30 -->
+            <div class="img-box">
+                <img src="Share_Data.jpeg">
+                <p>Share Data</p>
+            </div>
+<!-- 34 -->
+            <div class="img-box">
+                <img src="themes.jpeg">
+                <p>Themes</p>
+            </div>
+<!-- 22 -->
+            <div class="img-box">
+                <img src="app creator.png">
+                <p>App Creator In About</p>
+            </div>
+<!-- 17 -->
+            <div class="img-box">
+                <img src="lock_pin.png">
+                <p>App Start Time Password</p>
+            </div>
+<!-- 16 -->
+            <div class="img-box">
+                <img src="lock_forgot_dialog.png">
+                <p>Forget Password</p>
+            </div>
+        </div>
+        <div class="page-number">24</div>
+    </div>
+
+    <!-- Page 20: Testing -->
+    <div class="pages">
+        <div class="header">
+            <h1>7. TESTING</h1>
+        </div>
+
+        <div class="section">
+            <h3>7.1 TEST CASES</h3>
+        </div>
+        <table class="student-table">    
+            <tr style="background-color: #f2f2f2;">
+                <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Test Case</th>
+                <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Input</th>
+                <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Expected Output</th>
+                <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Result</th>
+            </tr>
+        
+        
+            
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Splash Screen</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Launch app</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Splash screen shows for 1.5 sec, then navigates to Login (if not logged in) or Main (if logged in)</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Email Login – Success</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Email: test@example.com, Password: 123456</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Login successful, navigates to MainActivity, session saved</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Email Login – Invalid Password</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Email: test@example.com, Password: wrong</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Error message: "Wrong password"</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Email Login – Empty Fields</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Email: (empty), Password: (empty)</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Email error: "Enter Email", Password error: "Enter Password"</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Phone Login – Send OTP</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Phone: +919876543210</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">OTP sent message, OTP input field appears</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Phone Login – Verify OTP</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Phone: +919876543210, OTP: 123456 (valid)</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Login successful, navigates to Main</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Phone Login – Wrong OTP</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Phone: +919876543210, OTP: 000000</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Error: "Verification failed"</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Phone Login – Password Login</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Phone: +919876543210, Password: mypass</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Login successful if password matches saved one (via email conversion)</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Email Signup – Success</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Email: new@example.com, Password: 123456, Confirm: 123456</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Account created, navigates to Main, session saved</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+        </table>    
+        <div class="page-number">25</div>
+    </div>
+
+    <!--page_no 20 Transaction Management -->
+
+    <div class="pages">
+        <table>
+            
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Email Signup – Password Mismatch</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Email: new@example.com, Password: 123456, Confirm: 654321</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Error: "Passwords do not match"</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Forgot Password</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Email: registered@example.com</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Password reset email sent</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Logout</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Click logout in profile menu</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">User signed out, returns to Login screen</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+        </table>
+        <div class="section">
+            <h3>7.2 Transaction Management</h3>
+        </div>
+        <table>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Add Income</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Amount: 1000, Category: Salary, Description: "Monthly salary"</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Transaction saved, total balance increases by 1000</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Add Expense</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Amount: 200, Category: Food, Description: "Lunch"</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Transaction saved, total balance decreases by 200</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Add Transaction – Empty Amount</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Amount: (empty), Category: Shopping</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Error: "Enter Amount"</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">View Transactions</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Navigate to Transactions tab</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">List of all transactions displayed with date, amount, category, edit/delete icons</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Edit Transaction</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Click edit on a transaction, change amount from 200 to 250, save</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Transaction updated successfully, balance recalculated</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Delete Transaction</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Click delete on a transaction, confirm</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Transaction moved to Recycle Bin, balance updated</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Monthly Report</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Open Monthly Report</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Shows total income, expense, and balance for current month</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+         </table>
+        <div class="page-number">26</div>
+    </div>
+    
+    <!-- Udhar Management -->
+     <div class="pages">
+        <div class="section">
+            <h3>7.3 Udhar Management</h3>
+        </div>
+            <table>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Add Udhar – Diya (Give)</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Name: Raju, Phone: 9876543210, Amount: 500, Type: Give (+), Description: "Loan"</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Person created, ledger entry +500, net balance = 500 Diya</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Add Udhar – Liya (Take)</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Name: Raju, Amount: 300, Type: Take (-), Description: "Borrowed"</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Ledger entry -300, net balance = 200 Diya</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Udhar Payment – Partial</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">From Udhar history, click PAID on Raju, enter 200</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Remaining becomes 0 (Settled), ledger entry added with -200</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Udhar Payment – Exceed Balance</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Enter 500 when remaining is 200</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Error: "Amount greater than remaining"</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Udhar Delete</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Click DELETE on a person, confirm</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Person and all ledger entries removed from database</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Personal Ledger View</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Click eye icon on Raju</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Shows all ledger entries for that person with date, amount, type, description</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Contact Picker</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">In Add Udhar, click contact icon, select a contact</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Name and phone number auto-filled</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+                </tr>
+
+                <!-- Calendar & Reminders -->
+                
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Calendar View</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Open Calendar</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Current month displayed, cells color-coded for income/expense</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Day Click – Show Details</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Click on a date with transactions</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Dialog shows transactions and reminders for that day</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Add Reminder</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Long press a date, fill title, amount, type, time, save</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Reminder saved and scheduled, dot appears on calendar</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+                </tr>
+                
+            </table>
+        <div class="page-number">27</div>
+    </div>
+    <div class="pages">
+        <div class="section"></div>
+        <table>   
+            <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Reminder Notification</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">At scheduled time</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">Notification appears in status bar</td>
+                    <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr> 
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Delete Reminder</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">In day dialog, click "Reminders Delete"</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">All reminders for that date removed</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+
+            <!-- Settings & Profile -->
+            <div class="section">
+                <h3>7.4 Settings & Profile</h3>
+            </div>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Profile Update</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Change name to "New Name", email to "new@mail.com", phone to "9876543210", save</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Profile updated successfully, shown on dashboard</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Profile Photo</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Change photo from gallery</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Photo displayed correctly, persists after restart</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Themes – Dark Mode</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Select Dark theme in Themes</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">App switches to dark mode, setting saved</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Themes – Light Mode</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Select Light theme</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">App switches to light mode</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Delete Today's Data</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">In Settings, click "Delete Today's Data"</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Today's transactions moved to Recycle Bin</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Delete All Data</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Click "Delete All Data", confirm</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">All transactions moved to Recycle Bin</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Selective Delete</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Click "Selective Delete" (future feature)</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Shows message "Coming soon"</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Recycle Bin – View</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Open Recycle Bin from Settings</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">List of deleted transactions displayed</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Recycle Bin – Restore</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Click Restore on an item</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Transaction restored to main list, removed from Recycle Bin</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+            
+        </table>
+        <div class="page-number">28</div>
+    </div>
+    <!--  page_no 23 -->
+    <div class="pages">        
+        <table>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Recycle Bin – Permanent Delete</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Click Delete on an item</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Item permanently removed</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Recycle Bin – Delete All</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Click "Permanently Delete All"</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">All items permanently removed</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Export Data</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Click Export, choose location</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">CSV file saved with all transactions</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Import Data</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Click Import, select CSV file</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Data imported successfully, duplicates avoided</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Share Data</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Click Share</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">CSV file generated and share sheet opens</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+           
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Enable PIN Lock</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">In Settings, enable PIN, set PIN 1234</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Lock enabled, next launch asks for PIN</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Unlock with PIN</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Enter correct PIN 1234</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Unlocks to MainActivity</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Unlock with Wrong PIN</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Enter 0000</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Error message, stays on lock screen</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Forgot PIN</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Click "Forgot?", enter registered email, confirm countdown</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">After 5s, user logged out and lock cleared</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+        </table>
+        <table>
+
+        <!-- Navigation & UI -->
+             <div class="section">
+                <h3>7.5 Navigation & UI</h3>
+            </div>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Swipe Left on Dashboard</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Swipe left from dashboard</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Navigates to TransactionsActivity</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Swipe Right on Dashboard</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Swipe right</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Navigates to CalendarActivity</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Bottom Navigation – Home</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Click Home tab</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Returns to dashboard</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+        </table>
+        <div class="page-number">29</div>
+    </div>
+
+    <div class="pages">
+        <table>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Bottom Navigation – Calendar</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Click Calendar tab</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Opens Calendar</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Bottom Navigation – Transactions</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Click Transactions tab</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Opens Transactions list</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Profile Menu – Edit Profile</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Click profile image → Edit Profile</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Opens ProfileActivity</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Profile Menu – Settings</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Click Settings</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Opens SettingsActivity</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Profile Menu – Themes</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Click Themes</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Opens ThemesActivity</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Profile Menu – Contact</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Click Contact</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Opens dialer with predefined number</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Profile Menu – About</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Click About</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Opens AppCreatorActivity</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+        </table>
+        <!-- Data Persistence -->
+        <div class="section">
+            <h3>7.6 Data Persistence</h3>
+        </div>
+        <table>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Data Retention After Restart</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Close app and reopen</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">User remains logged in, all transactions and udhar data intact</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;">Auto Backup (Android)</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Uninstall and reinstall (with Google account backup enabled)</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">Data restored automatically</td>
+                <td style="border: 1px solid #ddd; padding: 8px;">✅ Pass</td>
+            </tr>
+        </table>
+        <div class="page-number">30</div>
+    </div>
+
+    <!-- Page 21: Future Scope -->
+    <div class="pages">
+        <div class="header">
+            <h1>8. FUTURE SCOPE</h1>
+        </div>
+
+        <div class="section" style="margin: 20mm;">
+            <h3>8.1 ADVANTAGES OF THE APPLICATION</h3>
+            <ol>
+                <li>Simple and easy to use interface</li>
+                <li>Helps track daily expenses</li>
+                <li>Provides financial summary</li>
+                <li>Works offline without internet</li>
+                <li>Improves financial management</li>
+                <li>Secure storage of financial data</li>
+            </ol>
+            
+        </div>
+
+        <div class="section" style="margin: 20mm;">
+             <h3>8.2 FUTURE SCOPE</h3>
+            <div style="margin-bottom: 10px;">The Expense Manager application can be further improved by adding more advanced features in the future.</div>
+            <ol>
+                <li>Cloud data backup</li>
+                <li>Multi-device synchronization</li>
+                <li>Advanced financial reports and charts</li>
+                <li>Reminder notifications for bills</li>
+                <li>Multi-user account system</li>
+            </ol>
+            <div>These improvements can enhance the functionality and usability of the application in future versions</div>
+        </div>
+        <div class="page-number">31</div>
+    </div>
+
+    <!-- Page 22: Conclusion -->
+    <div class="pages">
+        <div class="header">
+            <h1>9. CONCLUSION</h1>
+        </div>
+
+        <div class="section" style="margin: 20mm;">
+            <h3>9.1 PROJECT ACHIEVEMENTS</h3>
+            <div style="margin-bottom: 5px;">The Expense Manager Android Application provides a simple and effective solution for managing personal financial transactions.</div>
+            <div style="margin-bottom: 5px;">By allowing users to record income and expenses easily, the application helps individuals understand their spending habits and manage their finances more efficiently.</div>
+            <div>The project demonstrates the practical implementation of Android development concepts including user interface design, database management, and application architecture.</div>
+        </div>
+
+        <div class="section" style="margin: 20mm;">
+            <h3>9.2 LEARNING OUTCOMES</h3>
+            <ul>
+                <li>Comprehensive understanding of Android application development lifecycle</li>
+                <li>Practical experience with SQLite database management</li>
+                <li>Implementation of Material Design guidelines</li>
+                <li>Problem-solving and debugging skills</li>
+                <li>Team collaboration and project management</li>
+            </ul>
+        </div>
+
+        <div class="section" style="margin: 20mm;">
+            <h3>9.3 PROJECT SIGNIFICANCE</h3>
+            <p>This project not only serves as an academic requirement but also provides a functional tool that can be used by individuals for effective financial management. The application addresses real-world needs and has potential for commercial deployment with future enhancements.</p>
+        </div>
+        <div class="page-number">32</div>
+    </div>
+
+    <!-- Page 23: References -->
+    <div class="pages">
+        <div class="header">
+            <h1>10. REFERENCES</h1>
+        </div>
+
+        <div class="section" style="margin-left: 20mm;">
+            <h3>10.1 BOOKS</h3>
+            <ol>
+                <li>Phillips, B., & Stewart, C. (2023). Android Programming: The Big Nerd Ranch Guide.</li>
+                <li>Hardy, B. (2022). Android Development with Java: Beginner to Pro.</li>
+                <li>Google Developer Relations (2024). Material Design Guidelines.</li>
+            </ol>
+        </div>
+
+        <div class="section" style="margin-left: 20mm;">
+            <h3>10.2 ONLINE RESOURCES</h3>
+            <ol>
+                <li>Android Developer Documentation - developer.android.com</li>
+                <li>SQLite Official Documentation - sqlite.org</li>
+                <li>Stack Overflow Community - stackoverflow.com</li>
+                <li>GitHub Open Source Projects - github.com</li>
+            </ol>
+        </div>
+
+        <div class="section" style="margin-left: 20mm;">
+            <h3>10.3 RESEARCH PAPERS</h3>
+            <ol>
+                <li>Smith, J. (2023). "Mobile Financial Applications: User Experience Analysis"</li>
+                <li>Johnson, M. (2024). "Data Privacy in Mobile Applications"</li>
+                <li>Android Authority (2024). "Trends in Mobile App Development"</li>
+            </ol>
+        </div>
+        <div class="section" style="margin: 20mm;">
+            <h3>10.4 REFERENCES</h3>
+            <ol>
+                <li>Android Developer Documentation</li>
+                <li>SQLite Database Documentation</li>
+                <li>Java Programming Language Guide</li>
+                <li>Android Studio Official Website</li>
+            </ol>
+        </div>
+        <div class="page-number">33</div>
+    </div>
+
+    <!-- Page 24: Appendix -->
+    <div class="pages" >
+        <div class="header">
+            <h1>11. APPENDIX</h1>
+        </div>
+
+        <div class="section">
+            <h3>11.1 SOURCE CODE STRUCTURE</h3>
+            <div class="architecture">
+src/
+├── main/
+│   ├── java/com/example/expensemanager/
+│   │   ├── SplashActivity.java
+│   │   ├── MainActivity.java
+│   │   ├── AddTransactionActivity.java
+│   │   ├── TransactionsActivity.java
+│   │   ├── SettingsActivity.java
+│   │   ├── DatabaseHelper.java
+│   │   └── Transaction.java
+│   │
+│   └── res/
+│       ├── layout/
+│       │   ├── activity_splash.xml
+│       │   ├── activity_main.xml
+│       │   ├── activity_add_transaction.xml
+│       │   └── activity_transactions.xml
+│       │
+│       └── values/
+│           ├── strings.xml
+│           └── colors.xml
+            </div>
+            <div class="page-number">34</div>
+        </div>
+            <!-- Page_no 25 -->
+        <div class="section">
+            <h3>11.2 PROJECT TIMELINE</h3>
+            <ul>
+                <li><strong>Week 1-2:</strong> Project Planning and Requirement Analysis</li>
+                <li><strong>Week 3-4:</strong> System Design and Database Setup</li>
+                <li><strong>Week 5-6:</strong> Core Implementation</li>
+                <li><strong>Week 7-8:</strong> UI/UX Development</li>
+                <li><strong>Week 9-10:</strong> Testing and Debugging</li>
+                <li><strong>Week 11-12:</strong> Documentation and Finalization</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pages">
+        <div class="section">
+            <h3>11.3 CONTACT INFORMATION</h3>
+            <p><strong>Project Team:</strong> (" MD ASIF ALAM, RITIK KUMAR, MD DILSHAD ALAM AND AMANAT ALI,") </p>
+            <p><strong>Department:</strong> Computer Science & Engineering</p>
+            <p><strong>Institution:</strong> Molana Azad College of  Engineering & Technology</p>
+            <p><strong>Academic Year:</strong> 2025-2026</p>
+        </div>
+
+        <div class="footer">
+            <p style="font-size: xx-large; font-family: 'Times New Roman', Times, serif; margin-top: 43%;"><strong>--- END OF REPORT ---</strong></p>
+        </div>
+        <div class="page-number">35</div>
+    </div>
+    <!-- Page_no 26 -->
+
+</body>
+</html>
