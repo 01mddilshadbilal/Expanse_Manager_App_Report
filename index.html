@@ -11,21 +11,14 @@
             box-sizing: border-box;
         }
         body {
-           background-image: url('Backgroundreport.png'); 
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
-        
-            /* 2. Text readable banane ke liye */
-            font-family: 'Times New Roman', serif;
-            line-height: 1.6;
-            font-size: 12pt;
-            color: #fff; /* Agar background dark hai toh text white rakhein */
-        
-            /* 3. Background color ko image ke fallback ki tarah rakhein */
-            background-color: #090909; 
-        }
+          body {
+                font-family: 'Times New Roman',
+                serif; line-height: 1.6;
+                background-color: #f9f9f9;
+                background: #090909; 
+                color: #000;
+                font-size: 12pt;
+          }
         .center {
             text-align: center;
         }
@@ -81,6 +74,8 @@
             position: relative;
         }
         .pages {
+            background-image: url('Backgroundreport.png');      
+            background-position: center;
             width: 210mm;
             min-height: 297mm;
             margin: 0 auto;
